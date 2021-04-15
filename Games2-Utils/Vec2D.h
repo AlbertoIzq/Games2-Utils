@@ -39,7 +39,7 @@ namespace Game2DUtils
 		Vec2D& operator+=(const Vec2D& vec);
 		Vec2D& operator-=(const Vec2D& vec);
 
-		float Mag2() const; //Magnitude
-		float Mag() const;
+		float Mag2() const; // Square magnitude
+		float Mag() const; // Magnitude
 	};
 }

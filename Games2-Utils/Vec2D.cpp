@@ -4,7 +4,7 @@
 #include "Vec2D.h"
 #include "Utils.h"
 #include <cassert> // Used for assert
-#include <cmath> // Used for epsilon value and sqrt()
+#include <cmath> // Used for epsilon value and sqrt
 
 namespace Game2DUtils
 {
