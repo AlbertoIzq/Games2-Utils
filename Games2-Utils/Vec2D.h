@@ -45,6 +45,8 @@ namespace Game2DUtils
 		float mag() const; // Magnitude
 
 		Vec2D getUnitVec() const;
-		Vec2D& Normalize();
+		Vec2D& normalize();
+
+		float distance(const Vec2D& vec) const;
 	};
 }

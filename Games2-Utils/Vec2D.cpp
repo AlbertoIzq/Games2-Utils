@@ -106,7 +106,7 @@ namespace Game2DUtils
 		return Vec2D::Zero;
 	}
 
-	Vec2D& Vec2D::Normalize()
+	Vec2D& Vec2D::normalize()
 	{
 		float mag_value = mag();
 
@@ -116,5 +116,10 @@ namespace Game2DUtils
 		}
 
 		return *this;
+	}
+
+	float Vec2D::distance(const Vec2D& vec) const
+	{
+		return (vec - *this).mag();
 	}
 }
