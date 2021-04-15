@@ -3,10 +3,24 @@
 #include "framework.h"
 
 #include "Utils.h"
+#include <cmath>
 
-namespace Game2DUtils {
-	std::ostream& operator<<(std::ostream& consoleOut, const Vec2D& vec) {
-		std::cout << "X: " << vec.mX << ", Y: " << vec.mY << std::endl;
-		return consoleOut;
+namespace Game2DUtils
+{
+	static const float EPSILON = 0.0001f; // Tolerance value
+
+	bool isEqual(float x, float y)
+	{
+		return fabs(x - y) < EPSILON;
+	}
+
+	bool isGreaterThanOrEqual(float x, float y)
+	{
+		return x > y || isEqual(x, y);
+	}
+
+	bool isLessThanOrEqual(float x, float y)
+	{
+		return x < y || isEqual(x, y);
 	}
 }
