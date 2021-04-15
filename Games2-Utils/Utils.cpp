@@ -3,12 +3,10 @@
 #include "framework.h"
 
 #include "Utils.h"
-#include <cmath>
+#include <cmath> // Used for fabs
 
 namespace Game2DUtils
 {
-	static const float EPSILON = 0.0001f; // Tolerance value
-
 	bool isEqual(float x, float y)
 	{
 		return fabs(x - y) < EPSILON;
