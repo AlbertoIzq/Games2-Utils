@@ -54,5 +54,7 @@ namespace Game2DUtils
 		Vec2D projectOnto(const Vec2D& vec2) const;
 
 		float angleBetween(const Vec2D& vec2) const;
+
+		Vec2D reflect(const Vec2D& normal) const;
 	};
 }

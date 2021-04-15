@@ -141,4 +141,10 @@ namespace Game2DUtils
 	{
 		return acosf(getUnitVec().dot(vec2.getUnitVec()));
 	}
+
+	Vec2D Vec2D::reflect(const Vec2D& normal) const
+	{
+		// v - 2vparallel = v - 2(v dot n)n
+		return *this - 2 * projectOnto(normal);
+	}
 }
