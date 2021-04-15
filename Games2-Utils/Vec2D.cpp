@@ -122,4 +122,9 @@ namespace Game2DUtils
 	{
 		return (vec - *this).mag();
 	}
+
+	float Vec2D::dot(const Vec2D& vec) const
+	{
+		return mX * vec.mX + mY * vec.mY;
+	}
 }

@@ -48,5 +48,7 @@ namespace Game2DUtils
 		Vec2D& normalize();
 
 		float distance(const Vec2D& vec) const;
+
+		float dot(const Vec2D& vec) const;
 	};
 }
