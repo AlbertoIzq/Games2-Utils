@@ -56,5 +56,8 @@ namespace Game2DUtils
 		float angleBetween(const Vec2D& vec2) const;
 
 		Vec2D reflect(const Vec2D& normal) const;
+
+		void rotate(float angle, const Vec2D& around_point);
+		Vec2D rotationResult(float angle, const Vec2D& around_point) const;
 	};
 }

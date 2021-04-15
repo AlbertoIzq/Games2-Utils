@@ -147,4 +147,36 @@ namespace Game2DUtils
 		// v - 2vparallel = v - 2(v dot n)n
 		return *this - 2 * projectOnto(normal);
 	}
+
+	void Vec2D::rotate(float angle, const Vec2D& around_point)
+	{
+		float cosine = cosf(angle);
+		float sine = sinf(angle);
+
+		Vec2D thisVec(mX, mY);
+
+		thisVec -= around_point; // Go to origin first to rotate
+
+		float x_rot = thisVec.mX * cosine - thisVec.mY * sine;
+		float y_rot = thisVec.mX * sine + thisVec.mY * cosine;
+
+		Vec2D rot = Vec2D(x_rot, y_rot);
+		*this = rot + around_point; // Back to original location
+	}
+
+	Vec2D Vec2D::rotationResult(float angle, const Vec2D& around_point) const
+	{
+		float cosine = cosf(angle);
+		float sine = sinf(angle);
+
+		Vec2D thisVec(mX, mY);
+
+		thisVec -= around_point; // Go to origin first to rotate
+
+		float x_rot = thisVec.mX * cosine - thisVec.mY * sine;
+		float y_rot = thisVec.mX * sine + thisVec.mY * cosine;
+
+		Vec2D rot = Vec2D(x_rot, y_rot);
+		return rot + around_point; // Back to original location
+	}
 }
