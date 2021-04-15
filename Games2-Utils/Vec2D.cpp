@@ -4,7 +4,7 @@
 #include "Vec2D.h"
 #include "Utils.h"
 #include <cassert> // Used for assert
-#include <cmath> // Used for epsilon value
+#include <cmath> // Used for epsilon value and sqrt()
 
 namespace Game2DUtils
 {
@@ -58,5 +58,37 @@ namespace Game2DUtils
 		assert(fabs(scale) > EPSILON);
 		*this = *this / scale;
 		return *this;
+	}
+
+	Vec2D Vec2D::operator+(const Vec2D& vec) const
+	{
+		return Vec2D(mX + vec.mX, mY + vec.mY);
+	}
+
+	Vec2D Vec2D::operator-(const Vec2D& vec) const
+	{
+		return Vec2D(mX - vec.mX, mY - vec.mY);
+	}
+	Vec2D& Vec2D::operator+=(const Vec2D& vec)
+	{
+		*this = *this + vec;
+		return *this;
+	}
+
+	Vec2D& Vec2D::operator-=(const Vec2D& vec)
+	{
+		*this = *this - vec;
+		return *this;
+	}
+
+	// Magnitude
+	float Vec2D::Mag2() const
+	{
+		return mX * mX + mY * mY;
+	}
+
+	float Vec2D::Mag() const
+	{
+		return sqrt(Mag2());
 	}
 }

@@ -33,5 +33,13 @@ namespace Game2DUtils
 		Vec2D operator/(float scale) const;
 		Vec2D& operator*=(float scale);
 		Vec2D& operator/=(float scale);
+
+		Vec2D operator+(const Vec2D& vec) const;
+		Vec2D operator-(const Vec2D& vec) const;
+		Vec2D& operator+=(const Vec2D& vec);
+		Vec2D& operator-=(const Vec2D& vec);
+
+		float Mag2() const; //Magnitude
+		float Mag() const;
 	};
 }
