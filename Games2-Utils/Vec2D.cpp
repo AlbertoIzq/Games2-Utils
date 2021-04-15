@@ -8,6 +8,8 @@
 
 namespace Game2DUtils
 {
+	const Vec2D Vec2D::Zero;
+
 	// Friend functions
 	std::ostream& operator<<(std::ostream& consoleOut, const Vec2D& vec)
 	{
@@ -82,13 +84,37 @@ namespace Game2DUtils
 	}
 
 	// Magnitude
-	float Vec2D::Mag2() const
+	float Vec2D::mag2() const
 	{
 		return mX * mX + mY * mY;
 	}
 
-	float Vec2D::Mag() const
+	float Vec2D::mag() const
 	{
-		return sqrt(Mag2());
+		return sqrt(mag2());
+	}
+
+	Vec2D Vec2D::getUnitVec() const
+	{
+		float mag_value = mag();
+
+		if (mag_value > EPSILON)
+		{
+			return *this / mag_value;
+		}
+
+		return Vec2D::Zero;
+	}
+
+	Vec2D& Vec2D::Normalize()
+	{
+		float mag_value = mag();
+
+		if (mag_value > EPSILON)
+		{
+			*this /= mag_value;
+		}
+
+		return *this;
 	}
 }
