@@ -4,7 +4,7 @@
 #include "Vec2D.h"
 #include "Utils.h"
 #include <cassert> // Used for assert
-#include <cmath> // Used for epsilon value and sqrt
+#include <cmath> // Used for epsilon value, sqrt and acosf
 
 namespace Game2DUtils
 {
@@ -135,5 +135,10 @@ namespace Game2DUtils
 		float dot_value = dot(vec2_unit);
 
 		return vec2_unit * dot_value;
+	}
+
+	float Vec2D::angleBetween(const Vec2D& vec2) const
+	{
+		return acosf(getUnitVec().dot(vec2.getUnitVec()));
 	}
 }

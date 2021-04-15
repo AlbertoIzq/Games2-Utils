@@ -51,6 +51,8 @@ namespace Game2DUtils
 
 		float dot(const Vec2D& vec) const;
 
-		Vec2D projectOnto(const Vec2D& vec) const;
+		Vec2D projectOnto(const Vec2D& vec2) const;
+
+		float angleBetween(const Vec2D& vec2) const;
 	};
 }
