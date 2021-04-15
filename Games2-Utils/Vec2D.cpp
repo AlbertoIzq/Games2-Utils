@@ -127,4 +127,13 @@ namespace Game2DUtils
 	{
 		return mX * vec.mX + mY * vec.mY;
 	}
+
+	Vec2D Vec2D::projectOnto(const Vec2D& vec2) const
+	{
+		Vec2D vec2_unit = vec2.getUnitVec();
+
+		float dot_value = dot(vec2_unit);
+
+		return vec2_unit * dot_value;
+	}
 }

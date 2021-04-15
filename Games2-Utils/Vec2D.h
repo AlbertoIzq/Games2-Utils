@@ -50,5 +50,7 @@ namespace Game2DUtils
 		float distance(const Vec2D& vec) const;
 
 		float dot(const Vec2D& vec) const;
+
+		Vec2D projectOnto(const Vec2D& vec) const;
 	};
 }
